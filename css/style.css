@@ -113,10 +113,10 @@ body {
    ============================================================ */
 
 .hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: flex-start;
-  padding: 60px 0 80px;
+  padding: 60px 0 4rem;
   background: linear-gradient(170deg, #0f172a 60%, #1a2744 100%);
 }
 
