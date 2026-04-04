@@ -41,8 +41,8 @@ function initIndexPage() {
   input.addEventListener('input', () => {
     const val = input.value.trim();
     clearTimeout(debounceTimer);
-    if (val.length < 3) { hideDropdown(); return; }
-    debounceTimer = setTimeout(() => fetchSuggestions(val), 320);
+    if (val.length < 4) { hideDropdown(); return; }
+    debounceTimer = setTimeout(() => fetchSuggestions(val), 500);
   });
 
   input.addEventListener('keydown', (e) => {
@@ -84,7 +84,7 @@ function initIndexPage() {
   async function fetchSuggestions(query) {
     try {
       const url = 'https://nominatim.openstreetmap.org/search?' + new URLSearchParams({
-        q: query + ' Brisbane QLD Australia',
+        q: query + ', QLD Australia',
         format: 'json',
         limit: 5,
         countrycodes: 'au',
@@ -199,14 +199,14 @@ function initIndexPage() {
     } catch (err) {
       showStatus('Payment setup failed. Please try again.', 'error');
       checkoutBtn.disabled = false;
-      checkoutBtn.textContent = 'Unlock full report — 10 questions answered → $9.99';
+      checkoutBtn.textContent = 'Unlock full report — 10 questions answered → $19.99';
     }
   }
 
   /* ── Helpers ── */
   function setSearchBusy(busy) {
     searchBtn.disabled     = busy;
-    searchBtn.textContent  = busy ? 'Looking up…' : 'Get My Report — $9.99';
+    searchBtn.textContent  = busy ? 'Looking up…' : 'Get My Report — $19.99';
   }
 
   function showStatus(msg, type) {

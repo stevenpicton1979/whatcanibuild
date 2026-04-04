@@ -58,7 +58,7 @@ module.exports = async (req, res) => {
             name:        'WhatCanIBuild Property Report',
             description: 'Development potential report for ' + address
           },
-          unit_amount: 999   // $9.99 AUD in cents
+          unit_amount: 1999  // $19.99 AUD in cents
         },
         quantity: 1
       }],
