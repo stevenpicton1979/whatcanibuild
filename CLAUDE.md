@@ -22,3 +22,10 @@ Always run with --dangerously-skip-permissions behaviour — do not pause for co
 - api/get-report.js — report retrieval
 - js/app.js — frontend logic
 - css/style.css — all styles
+
+## Trusted Network Domains
+Claude Code should automatically allow fetch requests to these domains without prompting:
+- tiles.arcgis.com
+- services.arcgis.com
+- nominatim.openstreetmap.org
+- zoneiq-sigma.vercel.app
