@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatCanIBuild — Your Property Report</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="report-page">
+
+  <!-- ==================== LOADING ==================== -->
+  <div id="loading-state" class="full-screen-state" aria-live="polite">
+    <div class="container">
+      <div class="logo">WhatCanIBuild</div>
+      <div class="spinner" role="status" aria-label="Generating report"></div>
+      <h2>Generating your report…</h2>
+      <p>We're checking Brisbane City Plan 2014 for your property.<br>This usually takes 10–20 seconds.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ERROR ==================== -->
+  <div id="error-state" class="full-screen-state hidden" aria-live="assertive">
+    <div class="container">
+      <div class="logo">WhatCanIBuild</div>
+      <h2>Something went wrong</h2>
+      <p id="error-message"></p>
+      <a href="/" class="btn-primary" style="margin-top:1.5rem;display:inline-block;text-decoration:none;">← Try again</a>
+    </div>
+  </div>
+
+  <!-- ==================== REPORT ==================== -->
+  <div id="report-content" class="hidden">
+
+    <header class="report-header">
+      <div class="container">
+        <div class="logo">WhatCanIBuild</div>
+        <p class="report-eyebrow">Development Report</p>
+        <h1 id="report-address" class="report-address"></h1>
+        <div class="report-meta">
+          <span id="report-zone" class="zone-badge"></span>
+          <span id="report-council" class="council-badge"></span>
+        </div>
+        <p id="report-date" class="report-date"></p>
+      </div>
+    </header>
+
+    <main class="report-body">
+      <div class="container">
+
+        <div id="questions-grid" class="questions-grid"></div>
+
+        <div id="key-rules-section" class="key-rules-section hidden">
+          <h2>Key Planning Rules</h2>
+          <ul id="key-rules-list" class="key-rules-list"></ul>
+        </div>
+
+        <!-- Cross-sell -->
+        <div class="cross-sell">
+          <div class="cross-sell-item">
+            <h3>Buying this property?</h3>
+            <p>Get a full buyer's intelligence report</p>
+            <a href="https://clearoffer.com.au" target="_blank" rel="noopener noreferrer" class="btn-secondary">clearoffer.com.au →</a>
+          </div>
+          <div class="cross-sell-item">
+            <h3>Developer?</h3>
+            <p>Access Brisbane planning zone data via API</p>
+            <a href="https://zoneiq-sigma.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-secondary">ZoneIQ API →</a>
+          </div>
+        </div>
+
+        <footer class="report-footer">
+          <p id="report-source" class="report-source"></p>
+          <p id="report-disclaimer" class="disclaimer"></p>
+          <p class="footer-links" style="margin-top:12px;">
+            <a href="https://zoneiq-sigma.vercel.app" target="_blank" rel="noopener noreferrer">
+              Powered by ZoneIQ — Brisbane's planning zone API
+            </a>
+          </p>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

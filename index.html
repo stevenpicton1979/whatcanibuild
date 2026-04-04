@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatCanIBuild — Brisbane Property Development Report</title>
+  <meta name="description" content="Find out what you can build at your Brisbane address. Granny flats, subdivisions, Airbnb and more. Instant planning report. $9.99.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="logo">WhatCanIBuild</div>
+
+      <h1 class="hero-headline">What can you build<br>at your address?</h1>
+      <p class="hero-subheading">
+        Instant planning intelligence for Brisbane properties.<br>
+        Find out about granny flats, subdivisions, Airbnb, home businesses and more.
+      </p>
+
+      <!-- Address search -->
+      <div class="search-wrapper">
+        <div class="search-box" id="search-box">
+          <input
+            type="text"
+            id="address-input"
+            placeholder="Enter your Brisbane address..."
+            autocomplete="off"
+            aria-label="Brisbane property address"
+            aria-autocomplete="list"
+            aria-controls="autocomplete-dropdown"
+          >
+          <button id="search-btn" class="btn-primary">Get My Report — $9.99</button>
+        </div>
+        <div id="autocomplete-dropdown" class="autocomplete-dropdown hidden" role="listbox"></div>
+        <div id="search-status" class="search-status hidden" aria-live="polite"></div>
+      </div>
+
+      <!-- Preview card — hidden until lookup returns -->
+      <div id="preview-card" class="preview-card hidden" aria-live="polite">
+        <div class="preview-header">
+          <span class="preview-pin" aria-hidden="true">📍</span>
+          <div class="preview-header-text">
+            <div id="preview-address" class="preview-address"></div>
+            <div id="preview-zone" class="preview-zone"></div>
+          </div>
+        </div>
+
+        <div class="preview-teaser">
+          <div class="teaser-row">
+            <span class="teaser-icon" aria-hidden="true">🏠</span>
+            <span class="teaser-label">Granny flat:</span>
+            <span id="teaser-granny" class="teaser-value"></span>
+          </div>
+        </div>
+
+        <div class="locked-preview">
+          <div class="locked-label">🔒 9 more questions answered in your full report</div>
+          <div class="locked-grid" aria-hidden="true">
+            <div class="locked-item blur-item"><span>🏗️</span><span>Subdivision potential</span></div>
+            <div class="locked-item blur-item"><span>🏡</span><span>Airbnb / short-term rental</span></div>
+            <div class="locked-item blur-item"><span>💼</span><span>Home business rules</span></div>
+            <div class="locked-item blur-item"><span>📏</span><span>Height limits</span></div>
+            <div class="locked-item blur-item"><span>📐</span><span>Site coverage &amp; setbacks</span></div>
+            <div class="locked-item blur-item"><span>🌊</span><span>Flood overlay</span></div>
+            <div class="locked-item blur-item"><span>🏛️</span><span>Character overlay</span></div>
+            <div class="locked-item blur-item"><span>🏫</span><span>School catchments</span></div>
+            <div class="locked-item blur-item"><span>📍</span><span>Boundary setbacks</span></div>
+          </div>
+        </div>
+
+        <button id="checkout-btn" class="btn-checkout">
+          Unlock full report — 10 questions answered &nbsp;→&nbsp; $9.99
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Enter your address</h3>
+          <p>Type your Brisbane address into the search box above</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>We check City Plan 2014</h3>
+          <p>We look up your zone, overlays and planning rules instantly</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Get your instant report</h3>
+          <p>10 plain-English answers about your property's development potential</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHAT'S IN THE REPORT ==================== -->
+  <section class="report-contents">
+    <div class="container">
+      <h2>What's in your report</h2>
+      <p class="section-subtitle">10 questions answered for your specific property</p>
+      <div class="icon-grid">
+        <div class="icon-item"><span>🏠</span><p>Granny flat / secondary dwelling</p></div>
+        <div class="icon-item"><span>🏗️</span><p>Subdivision potential</p></div>
+        <div class="icon-item"><span>🏊</span><p>Pool &amp; outbuildings</p></div>
+        <div class="icon-item"><span>🏢</span><p>Second storey addition</p></div>
+        <div class="icon-item"><span>🏡</span><p>Airbnb / short-term rental</p></div>
+        <div class="icon-item"><span>💼</span><p>Home business</p></div>
+        <div class="icon-item"><span>📐</span><p>Height limits &amp; setbacks</p></div>
+        <div class="icon-item"><span>🌊</span><p>Flood overlay status</p></div>
+        <div class="icon-item"><span>🏛️</span><p>Character overlay</p></div>
+        <div class="icon-item"><span>🏫</span><p>School catchments</p></div>
+      </div>
+      <p class="social-proof">Based on Brisbane City Plan 2014 — the same data town planners use.</p>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="disclaimer">
+        WhatCanIBuild provides indicative planning information only.
+        Always verify with Brisbane City Council before making development decisions.
+      </p>
+      <p class="footer-links">
+        <a href="https://zoneiq-sigma.vercel.app" target="_blank" rel="noopener noreferrer">Powered by ZoneIQ</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
