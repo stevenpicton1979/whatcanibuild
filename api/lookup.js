@@ -60,11 +60,8 @@ module.exports = async (req, res) => {
       headers: { 'User-Agent': 'WhatCanIBuild/1.0' }
     });
 
-    if (!zoneRes.ok) throw new Error('ZoneIQ returned ' + zoneRes.status);
-
     const zoneData = await zoneRes.json();
-
-    if (!zoneData || !zoneData.success) {
+    if (!zoneRes.ok || !zoneData.success) {
       const errCode = zoneData?.error;
       if (errCode === 'OUTSIDE_COVERAGE') {
         return res.json({ valid: false, error: 'Address is outside our coverage area. We currently cover Brisbane, Gold Coast and Moreton Bay.' });
@@ -72,7 +69,7 @@ module.exports = async (req, res) => {
       if (errCode === 'ZONE_NOT_SEEDED') {
         return res.json({ valid: false, error: 'Planning data not yet available for this address. We\'re working on expanding our coverage.' });
       }
-      return res.json({ valid: false, error: 'Address not found in coverage area. We currently cover Brisbane, Gold Coast and Moreton Bay.' });
+      if (!zoneRes.ok) throw new Error('ZoneIQ returned ' + zoneRes.status);
     }
 
     /* ── Step 3: Build preview response ── */
