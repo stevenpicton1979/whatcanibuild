@@ -124,11 +124,14 @@ module.exports = async (req, res) => {
     console.error('[webhook] Processing error:', err.message);
 
     // Mark as failed so the report page can surface a helpful message
-    await db
-      .from('wcib_reports')
-      .update({ status: 'failed' })
-      .eq('stripe_session_id', sessionId)
-      .catch(e => console.error('[webhook] Failed to set status=failed:', e.message));
+    try {
+      await db
+        .from('wcib_reports')
+        .update({ status: 'failed' })
+        .eq('stripe_session_id', sessionId);
+    } catch (e) {
+      console.error('[webhook] Failed to set status=failed:', e.message);
+    }
 
     // Return 200 to prevent Stripe from retrying (error is not transient)
     return res.json({ received: true, error: err.message });
