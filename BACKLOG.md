@@ -13,6 +13,7 @@ Claude Code reads this file at the start of every session and works through task
 - [ ] Update ZoneIQ API URL in report.html footer from zoneiq-sigma.vercel.app to zoneiq.com.au.
 
 ## Ideas to validate
+- [ ] Add basic end-to-end tests — test /api/lookup returns valid zone data, test /api/create-checkout returns a Stripe URL, test /api/get-report returns 404 for unknown token. Use Jest + supertest.
 - [ ] Gold Coast specific landing page — separate SEO page
 - [ ] Sunshine Coast specific landing page
 - [ ] Granny flat calculator — free tool that upsells to full report
