@@ -567,14 +567,14 @@ body.report-page {
 .trust-bar { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:1.5rem; font-size:0.82rem; color:rgba(255,255,255,0.55); }
 .trust-bar span::before { content:"✓ "; color:#f5a623; }
 .why-section, .why-section h2, .why-section h3, .why-card p { color: #1a1a2e; }
-.why-section { background:#fff; padding:5rem 0; }
+.why-section { background:#ffffff !important; padding:5rem 0; }
 .why-section h2 { text-align:center; font-size:1.75rem; margin-bottom:2.5rem; color:#1a1a2e; }
 .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; max-width:860px; margin:0 auto; }
 .why-card { text-align:center; padding:1.5rem 1rem; }
 .why-icon { font-size:2.25rem; margin-bottom:0.75rem; }
 .why-card h3 { font-size:1rem; color:#1a1a2e; margin-bottom:0.4rem; }
 .why-card p { font-size:0.875rem; color:#666; line-height:1.55; }
-.sample-report { background:#f8f7f4; padding:5rem 0; }
+.sample-report { background:#f8f7f4 !important; padding:5rem 0; }
 .sample-report h2 { text-align:center; font-size:1.75rem; margin-bottom:0.5rem; color:#1a1a2e; }
 .sample-address-bar { max-width:860px; margin:0 auto 1.5rem; background:#1a1a2e; color:#fff; border-radius:10px; padding:0.9rem 1.25rem; display:flex; align-items:center; gap:0.75rem; font-size:0.9rem; flex-wrap:wrap; }
 .zone-pill { background:#f5a623; color:#1a1a2e; font-weight:700; border-radius:20px; padding:0.2rem 0.75rem; font-size:0.78rem; }
