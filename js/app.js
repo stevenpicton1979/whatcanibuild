@@ -4,7 +4,10 @@
    report.html (poll + render report).
    ============================================================ */
 
-const PAGE = document.body.classList.contains('report-page') ? 'report' : 'index';
+const PAGE        = document.body.classList.contains('report-page') ? 'report' : 'index';
+let _pollInterval = null;
+let _pollCount    = 0;
+const MAX_POLLS   = 40;
 
 if (PAGE === 'index') {
   initIndexPage();
@@ -230,9 +233,7 @@ function initReportPage() {
   pollForReport(token);
 }
 
-let _pollInterval = null;
-let _pollCount    = 0;
-const MAX_POLLS   = 40; // ~2 minutes at 3s intervals
+// (_pollInterval, _pollCount, MAX_POLLS declared at top of file)
 
 async function pollForReport(token) {
   _pollCount++;
