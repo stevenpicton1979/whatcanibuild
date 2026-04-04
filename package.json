@@ -1,0 +1,13 @@
+{
+  "name": "whatcanibuild",
+  "version": "1.0.0",
+  "description": "Brisbane property development potential report — $9.99",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "resend": "^3.2.0",
+    "stripe": "^14.14.0"
+  }
+}

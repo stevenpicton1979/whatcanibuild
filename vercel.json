@@ -1,0 +1,18 @@
+{
+  "framework": null,
+  "functions": {
+    "api/lookup.js": {
+      "maxDuration": 15
+    },
+    "api/create-checkout.js": {
+      "maxDuration": 15
+    },
+    "api/webhook.js": {
+      "memory": 512,
+      "maxDuration": 30
+    },
+    "api/get-report.js": {
+      "maxDuration": 10
+    }
+  }
+}
