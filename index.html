@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WhatCanIBuild — Brisbane Property Development Report</title>
-  <meta name="description" content="Find out what you can build at your Brisbane address. Granny flats, subdivisions, Airbnb and more. Instant planning report. $9.99.">
+  <meta name="description" content="Find out what you can build at your Brisbane address. Granny flats, subdivisions, Airbnb and more. Instant planning report. $19.99.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,10 +14,9 @@
     <div class="container">
       <div class="logo">WhatCanIBuild</div>
 
-      <h1 class="hero-headline">What can you build<br>at your address?</h1>
+      <h1 class="hero-headline">Know before you bid.<br>Know before you build.</h1>
       <p class="hero-subheading">
-        Instant planning intelligence for Brisbane properties.<br>
-        Find out about granny flats, subdivisions, Airbnb, home businesses and more.
+        Enter any Brisbane, Gold Coast or Moreton Bay address and get an instant plain-English report on your property's development potential — granny flats, subdivisions, Airbnb, height limits and more.
       </p>
 
       <!-- Address search -->
@@ -32,10 +31,17 @@
             aria-autocomplete="list"
             aria-controls="autocomplete-dropdown"
           >
-          <button id="search-btn" class="btn-primary">Get My Report — $9.99</button>
+          <button id="search-btn" class="btn-primary">Get My Report — $19.99</button>
         </div>
         <div id="autocomplete-dropdown" class="autocomplete-dropdown hidden" role="listbox"></div>
         <div id="search-status" class="search-status hidden" aria-live="polite"></div>
+      </div>
+
+      <div class="trust-bar">
+        <span>Brisbane City Plan 2014</span>
+        <span>69,845 planning zones</span>
+        <span>Instant results</span>
+        <span>No account needed</span>
       </div>
 
       <!-- Preview card — hidden until lookup returns -->
@@ -72,8 +78,37 @@
         </div>
 
         <button id="checkout-btn" class="btn-checkout">
-          Unlock full report — 10 questions answered &nbsp;→&nbsp; $9.99
+          Unlock full report — 10 questions answered &nbsp;→&nbsp; $19.99
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY SECTION ==================== -->
+  <section class="why-section">
+    <div class="container">
+      <h2>Why WhatCanIBuild?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>Instant — no waiting</h3>
+          <p>Council takes 3 days to return a call. Your report is ready in under 60 seconds.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💬</div>
+          <h3>Plain English answers</h3>
+          <p>No planning jargon. Every answer is written so anyone can understand it.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💰</div>
+          <h3>A fraction of planner fees</h3>
+          <p>A town planner charges $400–800 for a basic planning report. Yours is $19.99.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h3>Your address, your rules</h3>
+          <p>Not generic zone info — your specific property's overlays, catchments and constraints.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -86,40 +121,88 @@
         <div class="step">
           <div class="step-number">1</div>
           <h3>Enter your address</h3>
-          <p>Type your Brisbane address into the search box above</p>
+          <p>Type any Brisbane, Gold Coast or Moreton Bay address</p>
         </div>
         <div class="step">
           <div class="step-number">2</div>
           <h3>We check City Plan 2014</h3>
-          <p>We look up your zone, overlays and planning rules instantly</p>
+          <p>We instantly look up your zone, overlays and planning rules</p>
         </div>
         <div class="step">
           <div class="step-number">3</div>
-          <h3>Get your instant report</h3>
+          <h3>Get your report</h3>
           <p>10 plain-English answers about your property's development potential</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== WHAT'S IN THE REPORT ==================== -->
-  <section class="report-contents">
+  <!-- ==================== SAMPLE REPORT ==================== -->
+  <section class="sample-report">
     <div class="container">
-      <h2>What's in your report</h2>
-      <p class="section-subtitle">10 questions answered for your specific property</p>
-      <div class="icon-grid">
-        <div class="icon-item"><span>🏠</span><p>Granny flat / secondary dwelling</p></div>
-        <div class="icon-item"><span>🏗️</span><p>Subdivision potential</p></div>
-        <div class="icon-item"><span>🏊</span><p>Pool &amp; outbuildings</p></div>
-        <div class="icon-item"><span>🏢</span><p>Second storey addition</p></div>
-        <div class="icon-item"><span>🏡</span><p>Airbnb / short-term rental</p></div>
-        <div class="icon-item"><span>💼</span><p>Home business</p></div>
-        <div class="icon-item"><span>📐</span><p>Height limits &amp; setbacks</p></div>
-        <div class="icon-item"><span>🌊</span><p>Flood overlay status</p></div>
-        <div class="icon-item"><span>🏛️</span><p>Character overlay</p></div>
-        <div class="icon-item"><span>🏫</span><p>School catchments</p></div>
+      <h2>Here's what your report looks like</h2>
+      <p class="section-subtitle">Real report for a real Brisbane address</p>
+      <div class="sample-address-bar">
+        <span>📍</span>
+        <span style="flex:1">6 Glenheaton Court, Carindale, Brisbane QLD 4152</span>
+        <span class="zone-pill">Low Density Residential</span>
       </div>
-      <p class="social-proof">Based on Brisbane City Plan 2014 — the same data town planners use.</p>
+      <div class="sample-cards">
+        <div class="sample-card">
+          <div class="sample-card-header"><span>🏠</span> Can I build a granny flat?</div>
+          <div class="badge badge-permit">⚠️ Permit required</div>
+          <p>A permit is required to build a granny flat. Contact a town planner or Brisbane City Council.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sample-card-header"><span>🏗️</span> Can I subdivide my block?</div>
+          <div class="badge badge-possible">⚠️ Possible</div>
+          <p>Subdivision may be possible. Minimum lot size is 600m². Your block needs to be at least 1,200m² to create two lots.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sample-card-header"><span>🏡</span> Can I do Airbnb?</div>
+          <div class="badge badge-permit">⚠️ Permit required</div>
+          <p>A development permit is required for short-term accommodation in this zone.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sample-card-header"><span>💼</span> Can I run a business from home?</div>
+          <div class="badge badge-permitted">✅ Permitted</div>
+          <p>Yes — you can run a home-based business from this property.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sample-card-header"><span>📏</span> How tall can I build?</div>
+          <div class="badge badge-info">ℹ️ Info</div>
+          <p>Maximum height is 9.5m (2 storeys).</p>
+        </div>
+        <div class="sample-card">
+          <div class="sample-card-header"><span>🌊</span> Is there a flood overlay?</div>
+          <div class="badge badge-permitted">✅ No overlay</div>
+          <p>No flood overlay identified for this property based on Brisbane City Plan 2014 data.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sample-card-header"><span>🏛️</span> Character / heritage overlay?</div>
+          <div class="badge badge-overlay">⚠️ Overlay present</div>
+          <p>Yes — character overlay applies. Demolition of pre-1947 dwellings requires additional assessment.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sample-card-header"><span>🏫</span> School catchments</div>
+          <div class="badge badge-info">ℹ️ Info</div>
+          <p>Belmont SS (primary) · Whites Hill State College (secondary)</p>
+        </div>
+      </div>
+      <p class="sample-label">Example only — your report is generated live for your specific address.</p>
+    </div>
+  </section>
+
+  <!-- ==================== PRICE ANCHOR ==================== -->
+  <section class="price-anchor">
+    <div class="container">
+      <h2>One report. One decision. One price.</h2>
+      <p class="price-compare">A town planner charges <s>$400–800</s> for the same information.</p>
+      <div class="price-big">$19.99</div>
+      <a href="#address-input" class="btn-primary-lg" onclick="document.getElementById('address-input').focus();return false;">
+        Get My Report Now →
+      </a>
+      <p class="subtext">Instant · No account needed · Covers Brisbane, Gold Coast &amp; Moreton Bay</p>
     </div>
   </section>
 
@@ -131,7 +214,7 @@
         Always verify with Brisbane City Council before making development decisions.
       </p>
       <p class="footer-links">
-        <a href="https://zoneiq-sigma.vercel.app" target="_blank" rel="noopener noreferrer">Powered by ZoneIQ</a>
+        <a href="https://zoneiq.com.au" target="_blank" rel="noopener noreferrer">Powered by ZoneIQ</a>
       </p>
     </div>
   </footer>

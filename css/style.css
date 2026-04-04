@@ -559,3 +559,39 @@ body.report-page {
 @media (max-width: 480px) {
   .icon-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ============================================================
+   LANDING PAGE ADDITIONS — trust bar, why, sample report, price
+   ============================================================ */
+
+.trust-bar { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:1.5rem; font-size:0.82rem; color:rgba(255,255,255,0.55); }
+.trust-bar span::before { content:"✓ "; color:#f5a623; }
+.why-section { background:#fff; padding:5rem 0; }
+.why-section h2 { text-align:center; font-size:1.75rem; margin-bottom:2.5rem; color:#1a1a2e; }
+.why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; max-width:860px; margin:0 auto; }
+.why-card { text-align:center; padding:1.5rem 1rem; }
+.why-icon { font-size:2.25rem; margin-bottom:0.75rem; }
+.why-card h3 { font-size:1rem; color:#1a1a2e; margin-bottom:0.4rem; }
+.why-card p { font-size:0.875rem; color:#666; line-height:1.55; }
+.sample-report { background:#f8f7f4; padding:5rem 0; }
+.sample-report h2 { text-align:center; font-size:1.75rem; margin-bottom:0.5rem; color:#1a1a2e; }
+.sample-address-bar { max-width:860px; margin:0 auto 1.5rem; background:#1a1a2e; color:#fff; border-radius:10px; padding:0.9rem 1.25rem; display:flex; align-items:center; gap:0.75rem; font-size:0.9rem; flex-wrap:wrap; }
+.zone-pill { background:#f5a623; color:#1a1a2e; font-weight:700; border-radius:20px; padding:0.2rem 0.75rem; font-size:0.78rem; }
+.sample-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; max-width:860px; margin:0 auto; }
+.sample-card { background:#fff; border-radius:12px; padding:1.25rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07); border:1px solid #eee; }
+.sample-card-header { display:flex; align-items:center; gap:0.6rem; font-weight:600; color:#1a1a2e; margin-bottom:0.5rem; font-size:0.95rem; }
+.badge { display:inline-block; padding:0.2rem 0.65rem; border-radius:20px; font-size:0.75rem; font-weight:600; margin-bottom:0.5rem; }
+.badge-permit { background:#fff3cd; color:#856404; }
+.badge-permitted { background:#d1fae5; color:#065f46; }
+.badge-possible { background:#fff3cd; color:#856404; }
+.badge-overlay { background:#fef3c7; color:#92400e; }
+.badge-info { background:#e0f2fe; color:#0369a1; }
+.sample-card p { font-size:0.85rem; color:#555; margin:0; line-height:1.5; }
+.sample-label { text-align:center; font-size:0.8rem; color:#aaa; margin-top:1.25rem; font-style:italic; }
+.price-anchor { text-align:center; background:#1a1a2e; color:#fff; padding:4rem 1rem; }
+.price-anchor h2 { font-size:1.75rem; margin-bottom:0.75rem; }
+.price-compare { font-size:1rem; color:rgba(255,255,255,0.6); margin-bottom:0.4rem; }
+.price-compare s { color:rgba(255,255,255,0.35); }
+.price-big { font-size:3rem; font-weight:800; color:#f5a623; line-height:1; margin:0.5rem 0 1.25rem; }
+.btn-primary-lg { display:inline-block; background:#f5a623; color:#1a1a2e; font-weight:700; font-size:1.05rem; padding:0.9rem 2.25rem; border-radius:8px; border:none; cursor:pointer; text-decoration:none; }
+.price-anchor .subtext { margin-top:0.9rem; font-size:0.8rem; color:rgba(255,255,255,0.4); }
