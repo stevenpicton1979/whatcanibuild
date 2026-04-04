@@ -168,8 +168,8 @@ function generateReport(zoneiqData, fallbackAddress) {
         question:     'Can I subdivide my block?',
         answer:       rules.subdivision_min_lot_size_m2 ? 'possible' : 'unlikely',
         plain_english: rules.subdivision_min_lot_size_m2
-          ? 'Subdivision may be possible. Minimum lot size is ' + rules.subdivision_min_lot_size_m2 + 'm².'
-          : 'Subdivision is unlikely in this zone.',
+          ? 'Subdivision may be possible. Minimum lot size is ' + rules.subdivision_min_lot_size_m2 + 'm² — so your block needs to be at least ' + (rules.subdivision_min_lot_size_m2 * 2) + 'm² to create two lots. A town planner or surveyor can advise on feasibility (typically $500–1,500 for initial advice). <a href="https://www.brisbane.qld.gov.au/planning-and-building/development-applications/subdividing-land" target="_blank" rel="noopener">BCC subdivision guide →</a>'
+          : 'Subdivision is unlikely in this zone. If your block is unusually large, confirm with Brisbane City Council.',
         icon: '🏗️'
       },
       {
@@ -193,7 +193,7 @@ function generateReport(zoneiqData, fallbackAddress) {
         plain_english: rules.max_height_m
           ? 'Maximum height is ' + rules.max_height_m + 'm' +
             (rules.max_storeys ? ' (' + rules.max_storeys + ' storeys).' : '.')
-          : 'Height is determined by the Building Height overlay for your specific address. Check Brisbane City Plan 2014.',
+          : 'Height limit not set at the zone level for this property — it may be controlled by the Building Height Overlay. Check <a href="https://www.brisbane.qld.gov.au/planning-and-building/planning-guidelines-and-tools/brisbane-city-plan-2014" target="_blank" rel="noopener">Brisbane City Plan 2014 →</a> or contact council.',
         icon: '📏'
       },
       {
@@ -203,7 +203,7 @@ function generateReport(zoneiqData, fallbackAddress) {
         plain_english: rules.max_site_coverage_pct
           ? 'You can build on up to ' + rules.max_site_coverage_pct + '% of your lot.' +
             (rules.min_permeability_pct ? ' At least ' + rules.min_permeability_pct + '% must remain unpaved.' : '')
-          : 'Site coverage is determined by your specific zone code. Contact Brisbane City Council for limits.',
+          : 'Site coverage limits are not set at the zone level — check with Brisbane City Council or refer to the specific overlay code for your address.',
         icon: '📐'
       },
       {
@@ -214,7 +214,7 @@ function generateReport(zoneiqData, fallbackAddress) {
           ? 'Front: ' + (rules.setbacks.front_m ?? '?') + 'm from street. ' +
             'Side: '  + (rules.setbacks.side_m  ?? '?') + 'm. ' +
             'Rear: '  + (rules.setbacks.rear_m  ?? '?') + 'm.'
-          : 'Setback requirements vary by lot size and zone code. Refer to Brisbane City Plan 2014 Table 6.1.',
+          : 'Setback requirements vary by lot size and zone. Refer to <a href="https://www.brisbane.qld.gov.au/planning-and-building/planning-guidelines-and-tools/brisbane-city-plan-2014" target="_blank" rel="noopener">Brisbane City Plan 2014 Table 6.1 →</a> or contact a town planner.',
         icon: '📍'
       },
       {
@@ -222,10 +222,9 @@ function generateReport(zoneiqData, fallbackAddress) {
         question: 'Is there a flood overlay on my property?',
         answer:   overlays.flood?.has_flood_overlay ? 'yes' : 'no',
         plain_english: overlays.flood?.has_flood_overlay
-          ? 'Yes — flood overlay applies' +
-            (overlays.flood.risk_level    ? ' (' + overlays.flood.risk_level + ' risk'                      : '') +
-            (overlays.flood.flood_category ? ', category: ' + overlays.flood.flood_category + ')' : ')') +
-            '. This affects what can be built and minimum floor heights. Check Brisbane City Council\'s FloodWise portal for full details.'
+          ? 'Flood overlay applies' +
+            (overlays.flood.risk_level ? ' (' + overlays.flood.risk_level + ' risk)' : '') +
+            '. This affects what can be built and sets minimum floor heights. Get the full flood report from <a href="https://floodwise.brisbane.qld.gov.au/" target="_blank" rel="noopener">Brisbane FloodWise portal →</a> before making any development or purchase decisions.'
           : 'No flood overlay identified for this property based on Brisbane City Plan 2014 data.',
         icon: '🌊'
       },
@@ -234,7 +233,7 @@ function generateReport(zoneiqData, fallbackAddress) {
         question: 'Is my property in a character/heritage street?',
         answer:   overlays.character?.has_character_overlay ? 'yes' : 'no',
         plain_english: overlays.character?.has_character_overlay
-          ? 'Yes — character overlay applies. Demolition of pre-1947 dwellings requires additional assessment. The character of the streetscape must be maintained.'
+          ? 'Character overlay applies. Demolition of pre-1947 dwellings requires additional assessment and is often refused. Any additions must respect the existing streetscape character. <a href="https://www.brisbane.qld.gov.au/planning-and-building/planning-guidelines-and-tools/brisbane-city-plan-2014/overlays/character-residential-overlay" target="_blank" rel="noopener">Character overlay rules →</a>'
           : 'No character overlay identified. Standard zone rules apply.',
         icon: '🏛️'
       },
@@ -251,26 +250,26 @@ function generateReport(zoneiqData, fallbackAddress) {
 
     key_rules:  zoneiqData.key_rules || [],
     source:     'Brisbane City Plan 2014',
-    disclaimer: 'This report provides indicative planning information only. Rules may be affected by neighbourhood plans, recent amendments, or site-specific overlays not reflected here. Always verify with Brisbane City Council before making development decisions.'
+    disclaimer: 'This report provides indicative planning information only. Rules may be affected by neighbourhood plans, recent amendments, or site-specific overlays not reflected here. Always verify with your relevant council (Brisbane City Council, Gold Coast City Council, or Moreton Bay Regional Council) before making development decisions.'
   };
 }
 
-function plainEnglish(type, value) {
+function plainEnglish(type, value, rules) {
   const map = {
     secondary_dwelling: {
-      yes:             'Yes — you can build a granny flat without a permit (subject to size and setback requirements).',
-      permit_required: 'A permit is required to build a granny flat / secondary dwelling. Contact a town planner or Brisbane City Council.',
-      no:              'Secondary dwellings are not permitted in this zone.'
+      yes:             'Yes — you can build a secondary dwelling without a permit, subject to size limits (typically max 80m²) and setback requirements. No DA required for compliant builds.',
+      permit_required: 'A permit is required. In most residential zones this is a code-assessable development application — a town planner can prepare one for around $1,500–3,000. <a href="https://www.brisbane.qld.gov.au/planning-and-building/development-applications" target="_blank" rel="noopener">Brisbane City Council DA portal →</a>',
+      no:              'Secondary dwellings are not permitted in this zone. If you believe this is incorrect, verify with Brisbane City Council.'
     },
     airbnb: {
-      yes:             'Yes — short-term accommodation (Airbnb) is a permitted use in this zone.',
-      permit_required: 'A development permit is required for Airbnb / short-term accommodation in this zone.',
-      no:              'Short-term accommodation is not permitted in this zone.'
+      yes:             'Short-term accommodation (Airbnb, Stayz etc.) is a permitted use in this zone — no development approval needed. Keep records in case of neighbour disputes.',
+      permit_required: 'A development permit is required. Short-term accommodation in residential zones is assessed against the Short-term Accommodation code in City Plan 2014. Consider consulting a town planner before listing.',
+      no:              'Short-term accommodation is not permitted as of right in this zone. Operating without approval risks council enforcement action.'
     },
     home_business: {
-      yes:             'Yes — you can run a home-based business from this property.',
-      permit_required: 'A permit may be required depending on the nature of the business.',
-      no:              'Home-based businesses are not permitted in this zone.'
+      yes:             'Yes — home-based businesses are permitted. Restrictions apply: no more than 2 non-resident employees, no external signage, and no impact on neighbourhood character.',
+      permit_required: 'A permit may be required depending on the nature and scale of the business. Low-impact home offices are generally exempt — check the Home Based Business code in City Plan 2014.',
+      no:              'Home-based businesses are not permitted in this zone as of right. Contact Brisbane City Council to discuss your specific situation.'
     }
   };
 
