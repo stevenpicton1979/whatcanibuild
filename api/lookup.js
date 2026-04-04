@@ -21,9 +21,9 @@ module.exports = async (req, res) => {
 
   try {
     /* ── Step 1: Geocode via Nominatim ── */
-    const searchQuery = /Brisbane|QLD/i.test(address)
+    const searchQuery = /Brisbane|Gold Coast|Moreton Bay|QLD/i.test(address)
       ? address
-      : address + ' Brisbane QLD Australia';
+      : address + ', QLD Australia';
 
     const nominatimUrl = 'https://nominatim.openstreetmap.org/search?' + new URLSearchParams({
       q:            searchQuery,
@@ -65,11 +65,7 @@ module.exports = async (req, res) => {
     const zoneData = await zoneRes.json();
 
     if (!zoneData || !zoneData.zone || zoneData.error) {
-      return res.json({ valid: false, error: 'Currently Brisbane only. Gold Coast coming soon.' });
-    }
-
-    if (zoneData.zone.council && zoneData.zone.council !== 'brisbane') {
-      return res.json({ valid: false, error: 'Currently Brisbane only. Gold Coast coming soon.' });
+      return res.json({ valid: false, error: 'Address not found in coverage area. Covers Brisbane, Gold Coast and Moreton Bay.' });
     }
 
     /* ── Step 3: Build preview response ── */
