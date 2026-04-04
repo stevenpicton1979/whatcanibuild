@@ -52,7 +52,7 @@ module.exports = async (req, res) => {
     const resolvedAddress = geo.display_name;
 
     /* ── Step 2: ZoneIQ lookup ── */
-    const zoneiqUrl = 'https://zoneiq-sigma.vercel.app/api/lookup?' + new URLSearchParams({
+    const zoneiqUrl = 'https://zoneiq.com.au/api/lookup?' + new URLSearchParams({
       address
     });
 
