@@ -76,7 +76,7 @@ module.exports = async (req, res) => {
   try {
     /* ── Fetch full data from ZoneIQ ── */
     const zoneRes = await fetch(
-      'https://zoneiq-sigma.vercel.app/api/lookup?' + new URLSearchParams({ address }),
+      'https://zoneiq.com.au/api/lookup?' + new URLSearchParams({ address }),
       { headers: { 'User-Agent': 'WhatCanIBuild/1.0' } }
     );
 
