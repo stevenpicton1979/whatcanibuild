@@ -5,7 +5,7 @@
 
 :root {
   --navy:        #0f172a;
-  --navy-light:  #1e293b;
+  --navy-light:  #0f172a;
   --navy-mid:    #334155;
   --amber:       #f59e0b;
   --amber-light: #fbbf24;
@@ -369,7 +369,7 @@ body {
 
 body.report-page {
   background: #f8fafc;
-  color: #1e293b;
+  color: #0f172a;
 }
 
 /* ── Full-screen states (loading / error) ── */
@@ -462,7 +462,7 @@ body.report-page {
   margin-bottom: 10px;
 }
 .qcard-icon { font-size: 1.625rem; line-height: 1; flex-shrink: 0; }
-.qcard-question { font-size: .9rem; font-weight: 600; color: #1e293b; line-height: 1.4; }
+.qcard-question { font-size: .9rem; font-weight: 600; color: #0f172a; line-height: 1.4; }
 
 .qcard-status {
   display: inline-flex;
@@ -490,7 +490,7 @@ body.report-page {
   border: 1px solid #e2e8f0;
   border-radius: var(--radius);
 }
-.key-rules-section h2 { font-size: 1.15rem; font-weight: 700; color: #1e293b; margin-bottom: 14px; }
+.key-rules-section h2 { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 14px; }
 
 .key-rules-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .key-rules-list li {
@@ -566,6 +566,7 @@ body.report-page {
 
 .trust-bar { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:1.5rem; font-size:0.82rem; color:rgba(255,255,255,0.55); }
 .trust-bar span::before { content:"✓ "; color:#f5a623; }
+.why-section, .why-section h2, .why-section h3, .why-card p { color: #1a1a2e; }
 .why-section { background:#fff; padding:5rem 0; }
 .why-section h2 { text-align:center; font-size:1.75rem; margin-bottom:2.5rem; color:#1a1a2e; }
 .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; max-width:860px; margin:0 auto; }
