@@ -315,7 +315,7 @@ function renderReport(report) {
         '<span class="qcard-question">' + esc(q.question) + '</span>' +
       '</div>' +
       '<div class="qcard-status ' + status.cls + '">' + status.emoji + ' ' + esc(status.label) + '</div>' +
-      '<div class="qcard-body">' + esc(q.plain_english) + '</div>';
+      '<div class="qcard-body">' + (q.html_safe ? q.plain_english : esc(q.plain_english)) + '</div>';
     grid.appendChild(card);
   });
 

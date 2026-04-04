@@ -101,7 +101,7 @@ module.exports = async (req, res) => {
     if (customerEmail) {
       try {
         const resend  = new Resend(process.env.RESEND_API_KEY);
-        const baseUrl = process.env.BASE_URL || 'https://whatcanibuild.vercel.app';
+        const baseUrl = process.env.BASE_URL || 'https://whatcanibuild.com.au';
 
         await resend.emails.send({
           from:    'WhatCanIBuild <hello@clearoffer.com.au>',
@@ -161,6 +161,7 @@ function generateReport(zoneiqData, fallbackAddress) {
         question:     'Can I build a granny flat / secondary dwelling?',
         answer:       rules.secondary_dwelling_permitted || 'unknown',
         plain_english: plainEnglish('secondary_dwelling', rules.secondary_dwelling_permitted),
+        html_safe:    true,
         icon:         '🏠'
       },
       {
@@ -170,6 +171,7 @@ function generateReport(zoneiqData, fallbackAddress) {
         plain_english: rules.subdivision_min_lot_size_m2
           ? 'Subdivision may be possible. Minimum lot size is ' + rules.subdivision_min_lot_size_m2 + 'm² — so your block needs to be at least ' + (rules.subdivision_min_lot_size_m2 * 2) + 'm² to create two lots. A town planner or surveyor can advise on feasibility (typically $500–1,500 for initial advice). <a href="https://www.brisbane.qld.gov.au/planning-and-building/development-applications/subdividing-land" target="_blank" rel="noopener">BCC subdivision guide →</a>'
           : 'Subdivision is unlikely in this zone. If your block is unusually large, confirm with Brisbane City Council.',
+        html_safe: true,
         icon: '🏗️'
       },
       {
@@ -226,6 +228,7 @@ function generateReport(zoneiqData, fallbackAddress) {
             (overlays.flood.risk_level ? ' (' + overlays.flood.risk_level + ' risk)' : '') +
             '. This affects what can be built and sets minimum floor heights. Get the full flood report from <a href="https://floodwise.brisbane.qld.gov.au/" target="_blank" rel="noopener">Brisbane FloodWise portal →</a> before making any development or purchase decisions.'
           : 'No flood overlay identified for this property based on Brisbane City Plan 2014 data.',
+        html_safe: true,
         icon: '🌊'
       },
       {
@@ -235,6 +238,7 @@ function generateReport(zoneiqData, fallbackAddress) {
         plain_english: overlays.character?.has_character_overlay
           ? 'Character overlay applies. Demolition of pre-1947 dwellings requires additional assessment and is often refused. Any additions must respect the existing streetscape character. <a href="https://www.brisbane.qld.gov.au/planning-and-building/planning-guidelines-and-tools/brisbane-city-plan-2014/overlays/character-residential-overlay" target="_blank" rel="noopener">Character overlay rules →</a>'
           : 'No character overlay identified. Standard zone rules apply.',
+        html_safe: true,
         icon: '🏛️'
       },
       {
