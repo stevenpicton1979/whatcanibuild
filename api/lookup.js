@@ -64,8 +64,8 @@ module.exports = async (req, res) => {
 
     const zoneData = await zoneRes.json();
 
-    if (!zoneData || !zoneData.zone || zoneData.error) {
-      return res.json({ valid: false, error: 'Address not found in coverage area. Covers Brisbane, Gold Coast and Moreton Bay.' });
+    if (!zoneData || !zoneData.zone || zoneData.error || zoneData.error === 'OUTSIDE_COVERAGE' || !zoneData.success) {
+      return res.json({ valid: false, error: 'Address is outside our coverage area. We currently cover Brisbane, Gold Coast and Moreton Bay.' });
     }
 
     /* ── Step 3: Build preview response ── */
