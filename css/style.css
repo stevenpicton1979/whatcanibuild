@@ -533,12 +533,88 @@ body.report-page {
 .report-footer .footer-links a:hover { color: var(--amber); }
 
 /* ============================================================
+   PRODUCT PICKER
+   ============================================================ */
+
+.hero-picker-container { max-width: 860px !important; }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.product-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: border-color .2s, transform .15s;
+}
+.product-card:hover {
+  border-color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.product-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.product-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -.3px;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.product-card-subtitle {
+  font-size: 0.95rem;
+  color: var(--secondary);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.product-card-btn {
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Planning tool section */
+.planning-tool-section {
+  background: var(--navy-light);
+  padding: 60px 0 80px;
+}
+
+.planning-tool-heading {
+  font-size: 1.875rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.planning-tool-subheading {
+  font-size: 1rem;
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
 @media (max-width: 768px) {
   .hero { padding: 40px 0 60px; }
   .hero-headline { font-size: 1.875rem; }
+  .product-grid { grid-template-columns: 1fr; }
 
   .search-box { flex-direction: column; padding: 12px; gap: 8px; }
   .btn-primary { width: 100%; text-align: center; padding: 14px 24px; }

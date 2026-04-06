@@ -9,15 +9,38 @@
 </head>
 <body>
 
-  <!-- ==================== HERO ==================== -->
+  <!-- ==================== HERO: PRODUCT PICKER ==================== -->
   <section class="hero">
-    <div class="container">
+    <div class="container hero-picker-container">
       <div class="logo">WhatCanIBuild</div>
 
       <h1 class="hero-headline">Know before you bid.<br>Know before you build.</h1>
       <p class="hero-subheading">
-        Enter any Brisbane, Gold Coast or Moreton Bay address and get an instant plain-English report on your property's development potential — granny flats, subdivisions, Airbnb, height limits and more.
+        Instant plain-English answers about your property's development potential — no consultants, no waiting.
       </p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-card-icon">🏗️</div>
+          <h2 class="product-card-title">What Can I Build?</h2>
+          <p class="product-card-subtitle">Enter an address to see what planning rules apply to your block</p>
+          <a href="#planning-tool" class="btn-primary-lg product-card-btn">Get Started →</a>
+        </div>
+        <div class="product-card">
+          <div class="product-card-icon">✂️</div>
+          <h2 class="product-card-title">Can I Subdivide?</h2>
+          <p class="product-card-subtitle">Find out if your block is viable to split before you spend a cent on consultants</p>
+          <a href="https://subdivide.whatcanibuild.com.au" class="btn-primary-lg product-card-btn">Get Started →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PLANNING TOOL ==================== -->
+  <section id="planning-tool" class="planning-tool-section">
+    <div class="container">
+      <h2 class="planning-tool-heading">What Can I Build?</h2>
+      <p class="planning-tool-subheading">Enter any Brisbane, Gold Coast or Moreton Bay address and get an instant plain-English planning report.</p>
 
       <!-- Address search -->
       <div class="search-wrapper">
@@ -199,7 +222,7 @@
       <h2>One report. One decision. One price.</h2>
       <p class="price-compare">A town planner charges <s>$400–800</s> for the same information.</p>
       <div class="price-big">$19.99</div>
-      <a href="#address-input" class="btn-primary-lg" onclick="document.getElementById('address-input').focus();return false;">
+      <a href="#planning-tool" class="btn-primary-lg" onclick="document.getElementById('address-input').focus();return false;">
         Get My Report Now →
       </a>
       <p class="subtext">Instant · No account needed · Covers Brisbane, Gold Coast &amp; Moreton Bay</p>
