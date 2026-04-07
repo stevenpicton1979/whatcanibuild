@@ -1,8 +1,7 @@
-Read CLAUDE.md and BACKLOG.md. Then:
-1. Report which tasks are [ ] incomplete in BACKLOG.md
-2. Check the last 3 git commits: git log --oneline -3
-3. Run the smoke tests if a test command exists in package.json
-4. Report any known issues from BACKLOG.md
-5. State what you are going to work on first and begin immediately
+Read CLAUDE.md and BACKLOG.md. Then report:
+1. Incomplete [ ] tasks in BACKLOG.md — list them
+2. Last 3 git commits: git log --oneline -3
+3. Smoke test result if npm test exists
+4. Any known issues from BACKLOG.md
 
-Do not wait for confirmation. Begin working after this briefing.
+Then STOP and wait for Steve's instructions. Do NOT begin any task automatically.
