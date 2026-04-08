@@ -42,8 +42,9 @@ All secrets are managed via Doppler. Never hardcode secrets, never use `vercel e
 - If Doppler is not yet set up for this repo, flag it to Steve before proceeding
 
 ## /start
-When you receive the /start command or are started with no specific task:
+When Claude Code starts (via /start, overnight:, or no specific task given):
 1. Read BACKLOG.md
-2. List all [ ] incomplete tasks
-3. Ask which to work on — or if told "work through all tasks", execute every [ ] task autonomously, mark [x] when done, move to next automatically
-4. Create or append to OVERNIGHT_LOG.md with timestamped entries
+2. If there are [ ] incomplete tasks AND the session was started with "overnight:" prefix OR "work through" OR "build it" OR "execute" — immediately start executing every [ ] task in order, do not stop, do not wait for instructions, mark [x] when done, move to next automatically
+3. If started with no clear instruction — list incomplete tasks and wait
+4. Always create or append to OVERNIGHT_LOG.md with timestamped entries
+5. Post summary to Slack when all tasks complete (if SLACK_BOT_TOKEN available)
