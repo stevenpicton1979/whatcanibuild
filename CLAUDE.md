@@ -40,3 +40,10 @@ All secrets are managed via Doppler. Never hardcode secrets, never use `vercel e
 - To run locally: `doppler run -- npm run dev`
 - To check current secrets: `doppler secrets`
 - If Doppler is not yet set up for this repo, flag it to Steve before proceeding
+
+## /start
+When you receive the /start command or are started with no specific task:
+1. Read BACKLOG.md
+2. List all [ ] incomplete tasks
+3. Ask which to work on — or if told "work through all tasks", execute every [ ] task autonomously, mark [x] when done, move to next automatically
+4. Create or append to OVERNIGHT_LOG.md with timestamped entries
