@@ -1,4 +1,5 @@
 {
+  "ignoreCommand": "[ \"$VERCEL_ENV\" = \"preview\" ] && exit 0; ! git diff HEAD^ HEAD --name-only -- . ':(exclude)*.md' ':(exclude)*.txt' ':(exclude)docs/' ':(exclude)data/' ':(exclude)STATE.md' ':(exclude)BACKLOG.md' ':(exclude)OVERNIGHT_LOG.md' | grep -q .",
   "framework": null,
   "functions": {
     "api/lookup.js": {
