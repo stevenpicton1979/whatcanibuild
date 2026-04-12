@@ -41,6 +41,23 @@ All secrets are managed via Doppler. Never hardcode secrets, never use `vercel e
 - To check current secrets: `doppler secrets`
 - If Doppler is not yet set up for this repo, flag it to Steve before proceeding
 
+## State management — mandatory protocol
+
+This repo's state lives in C:\dev\portfoliostate\STATE_WHATCANIBUILD.md
+
+Before reading state:
+  git -C C:\dev\portfoliostate fetch origin
+  git -C C:\dev\portfoliostate reset --hard origin/main
+  Then read C:\dev\portfoliostate\STATE_WHATCANIBUILD.md
+
+Never read STATE.md (deprecated). Never write another product's state file.
+
+After completing work, push state before ending the session:
+  cd C:\dev\portfoliostate
+  git add STATE_WHATCANIBUILD.md
+  git commit -m "state: WhatCanIBuild session update"
+  git push
+
 ## /start
 When Claude Code starts (via /start, overnight:, or no specific task given):
 1. Read BACKLOG.md
